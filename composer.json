@@ -1,0 +1,11 @@
+{
+  "name": "bitcode/iklaviyoef",
+  "description": "An Integration plugin for wordpress",
+  "license": "gpl-2",
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "FormInteg\\IKLAVIYOEF\\": "includes/"
+    }
+  }
+}
