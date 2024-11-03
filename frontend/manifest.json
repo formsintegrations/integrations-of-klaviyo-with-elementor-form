@@ -1,8 +1,8 @@
 {
-  "name": "Zoho CRM for WPForms",
+  "name": "Klaviyo for WPForms",
   "version": "1.0.0",
-  "short_name": "CF7-Zoho CRM",
-  "description": "Sends WPForms entries to Zoho CRM",
+  "short_name": "CF7-Klaviyo",
+  "description": "Sends WPForms entries to Klaviyo",
   "icons": [
     {
       "src": "../img/logo.svg",
@@ -16,10 +16,10 @@
   "background_color": "#13233c"
 },
 {
-  "name": "Zoho CRM for WPForms",
+  "name": "Klaviyo for WPForms",
   "version": "1.0.0",
-  "short_name": "CF7-Zoho CRM",
-  "description": "Sends WPForms entries to Zoho CRM",
+  "short_name": "CF7-Klaviyo",
+  "description": "Sends WPForms entries to Klaviyo",
   "icons": [
     {
       "src": "../img/logo.svg",

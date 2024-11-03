@@ -7,8 +7,8 @@ import { __ } from "../../Utils/i18nwrap";
 import SnackMsg from "../Utilities/SnackMsg";
 
 const Loader = lazy(() => import("../Loaders/Loader"));
-const ZohoCRMAuthorization = lazy(() =>
-  import("./ZohoCRM/ZohoCRMAuthorization")
+const KlaviyoAuthorization = lazy(() =>
+  import("./Klaviyo/KlaviyoAuthorization")
 );
 
 export default function IntegInfo() {
@@ -33,22 +33,11 @@ export default function IntegInfo() {
     }
   }, [data]);
 
-  // route is info/:id but for redirect uri need to make new/:type
-  let location = window.location.toString();
-  const toReplaceInd = location.indexOf("/info");
-  // location = window.encodeURI(`${location.slice(0, toReplaceInd)}/new/${type}`)
-  location = `${iklaviyoef?.api?.base}/redirect`;
-
   const IntegrationInfo = () => {
     switch (integrationConf.type) {
-      case "Zoho CRM":
+      case "Klaviyo":
         return (
-          <ZohoCRMAuthorization
-            crmConf={integrationConf}
-            step={1}
-            redirectLocation={location}
-            isInfo
-          />
+          <KlaviyoAuthorization klaviyoConf={integrationConf} step={1} isInfo />
         );
       default:
         return <></>;

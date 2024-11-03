@@ -43,7 +43,9 @@ function EditWebhookInteg({ setSnackbar }) {
   };
   return (
     <div className="flx mt-3">
-      <b className="wdt-200 d-in-b">{__("Webhook URL:", "bit-integrations")}</b>
+      <b className="wdt-200 d-in-b">
+        {__("Webhook URL:", "elementor-klaviyo")}
+      </b>
       <div className="w-5">
         <CopyText
           value={`${api.base}/callback/${hookID}`}
@@ -57,8 +59,8 @@ function EditWebhookInteg({ setSnackbar }) {
           type="button"
         >
           {flow.triggerDetail?.data
-            ? __("Fetched ✔", "bit-integrations")
-            : __("Fetch", "bit-integrations")}
+            ? __("Fetched ✔", "elementor-klaviyo")
+            : __("Fetch", "elementor-klaviyo")}
           {isLoading && <LoaderSm size="20" clr="#022217" className="ml-2" />}
         </button>
       </div>

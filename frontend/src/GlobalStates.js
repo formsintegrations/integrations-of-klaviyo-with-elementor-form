@@ -20,9 +20,9 @@ export const $newFlow = atom({
       type: "form",
       is_active: true,
       activation_url:
-        "http://bit-integrations.test/wp-admin/plugins.php?action=activate&amp;plugin=elementor-pro%2Felementor-pro.php&amp;plugin_status=all&amp;paged=1&amp;s&amp;_wpnonce=8516dbffbf",
+        "http://elementor-klaviyo.test/wp-admin/plugins.php?action=activate&amp;plugin=elementor-pro%2Felementor-pro.php&amp;plugin_status=all&amp;paged=1&amp;s&amp;_wpnonce=8516dbffbf",
       install_url:
-        "http://bit-integrations.test/wp-admin/update.php?action=install-plugin&amp;plugin=elementor-pro%2Felementor-pro.php&amp;_wpnonce=7df8d9fbe5",
+        "http://elementor-klaviyo.test/wp-admin/update.php?action=install-plugin&amp;plugin=elementor-pro%2Felementor-pro.php&amp;_wpnonce=7df8d9fbe5",
       list: {
         action: "elementor/get",
         method: "get",

@@ -432,7 +432,7 @@ class Model
         }
         // echo " Q S " . $preparedQuery . " Q  EE";
         if (empty($preparedQuery)) {
-            $this->db_response = new WP_Error('null_query', __('prepared query is empty', 'elementor-to-zoho-crm'));
+            $this->db_response = new WP_Error('null_query', __('prepared query is empty', 'elementor-to-klaviyo'));
         } else {
             $this->db_response = stripos($preparedQuery, 'DELETE') !== false ? $this->app_db->query($preparedQuery)
                 : $this->app_db->get_results($preparedQuery, OBJECT_K);

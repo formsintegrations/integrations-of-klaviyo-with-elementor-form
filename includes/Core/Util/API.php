@@ -7,7 +7,7 @@ use WP_REST_Server;
 
 final class API extends WP_REST_Controller
 {
-    private const BASE = 'elementor-to-zoho-crm';
+    private const BASE = 'elementor-to-klaviyo';
     private const VERSION = 'v1/';
 
 

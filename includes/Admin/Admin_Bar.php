@@ -54,7 +54,7 @@ class Admin_Bar
         $site_url .= empty($parsed_url['port']) ? null : ':' . $parsed_url['port'];
         $base_path_admin = str_replace($site_url, '', get_admin_url());
 
-        $prefix = 'FITEZCRM';
+        $prefix = 'FITEKLAVIYO';
         if (is_readable(IKLAVIYOEF_PLUGIN_DIR_PATH . DIRECTORY_SEPARATOR . 'port')) {
             $devPort = file_get_contents(IKLAVIYOEF_PLUGIN_DIR_PATH . DIRECTORY_SEPARATOR . 'port');
             $devUrl = 'http://localhost:' . $devPort;
@@ -88,7 +88,7 @@ class Admin_Bar
 
         global $wp_rewrite;
         $api = [
-            'base'      => get_rest_url() . 'elementor-to-zoho-crm/v1',
+            'base'      => get_rest_url() . 'elementor-to-klaviyo/v1',
             'separator' => $wp_rewrite->permalink_structure ? '?' : '&'
         ];
         $users = get_users(['fields' => ['ID', 'user_nicename', 'user_email', 'display_name']]);
@@ -106,7 +106,7 @@ class Admin_Bar
             [
                 'nonce'      => wp_create_nonce('iklaviyoef_nonce'),
                 'assetsURL'  => IKLAVIYOEF_ASSET_URI,
-                'baseURL'    => $base_path_admin . 'admin.php?page=iklaviyoef#',
+                'baseURL'    => $base_path_admin . 'admin.php?page=iklaviyoef#/',
                 'siteURL'    => site_url(),
                 'ajaxURL'    => admin_url('admin-ajax.php'),
                 'api'        => $api,
@@ -125,7 +125,7 @@ class Admin_Bar
     }
 
     /**
-     * elementor-to-zoho-crm  apps-root id provider
+     * elementor-to-klaviyo  apps-root id provider
      *
      * @return void
      */
@@ -137,7 +137,7 @@ class Admin_Bar
     public function filterScriptTag($html, $handle)
     {
         $newTag = $html;
-        $prefix = 'FITEZCRM';
+        $prefix = 'FITEKLAVIYO';
         if (preg_match('/' . $prefix . '-MODULE/', $handle)) {
             $newTag = preg_replace('/<script /', '<script type="module" ', $newTag);
         }

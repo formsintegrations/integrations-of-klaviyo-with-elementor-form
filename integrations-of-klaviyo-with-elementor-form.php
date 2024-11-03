@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Integrations of Klaviyo with Elementor form
  * Requires Plugins: elementor
- * Plugin URI:  https://formsintegrations.com/elementor-forms-integration-with-zoho-crm
+ * Plugin URI:  https://formsintegrations.com/elementor-forms-integration-with-klaviyo
  * Description: This plugin integrates Elementor forms with Klaviyo
  * Version:     1.0.6
  * Author:      Forms Integrations

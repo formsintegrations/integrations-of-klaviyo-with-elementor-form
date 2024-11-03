@@ -1,39 +1,32 @@
 /* eslint-disable-next-line no-undef */
-import { useState } from 'react'
-import { Route, Switch, useRouteMatch } from 'react-router-dom'
-import { __ } from '../Utils/i18nwrap'
-import EditInteg from './AllIntegrations/EditInteg'
-import IntegInfo from './AllIntegrations/IntegInfo'
-import Log from './AllIntegrations/Log'
-import NewInteg from './AllIntegrations/NewInteg'
-import SnackMsg from './Utilities/SnackMsg'
+import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import { __ } from "../Utils/i18nwrap";
+import EditInteg from "./AllIntegrations/EditInteg";
+import IntegInfo from "./AllIntegrations/IntegInfo";
+import Log from "./AllIntegrations/Log";
+import NewInteg from "./AllIntegrations/NewInteg";
+import SnackMsg from "./Utilities/SnackMsg";
 
 function Integrations() {
-  const [snack, setSnackbar] = useState({ show: false })
-  const { path, url } = useRouteMatch()
-  const allIntegURL = url
+  const [snack, setSnackbar] = useState({ show: false });
 
   return (
     <div className="btcd-s-wrp" id="btcd-settings-wrp">
       <SnackMsg snack={snack} setSnackbar={setSnackbar} />
-      <Switch>
-        <Route path={`${path}/new/:integUrlName`}>
-          <NewInteg allIntegURL="/" />
-        </Route>
-        <Route exact path={`${path}/edit/:id`}>
-          <EditInteg allIntegURL="/" />
-        </Route>
+      <Routes>
+        <Route
+          path="new/:integUrlName/*"
+          element={<NewInteg allIntegURL="/" />}
+        />
+        <Route path="edit/:id" element={<EditInteg allIntegURL="/" />} />
 
-        <Route exact path={`${path}/info/:id/:type`}>
-          <IntegInfo allIntegURL={allIntegURL} />
-        </Route>
-        <Route exact path={`${path}/log/:id/:type`}>
-          <Log allIntegURL="/" />
-        </Route>
-      </Switch>
+        <Route path="info/:id/:type" element={<IntegInfo allIntegURL="/" />} />
 
+        <Route path="log/:id/:type" element={<Log allIntegURL="/" />} />
+      </Routes>
     </div>
-  )
+  );
 }
 
-export default Integrations
+export default Integrations;

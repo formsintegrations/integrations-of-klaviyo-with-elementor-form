@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-useless-fragment */
 /* eslint-disable no-undef */
 import { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { $iklaviyoef, $flowStep, $newFlow } from "../../../GlobalStates";
 import useFetch from "../../../hooks/useFetch";
@@ -22,7 +22,7 @@ export default function SelectTrigger() {
   const [allTriggers, setAllTriggers] = useState(data || {});
   const flowStep = useRecoilValue($flowStep);
   const [newFlow, setNewFlow] = useRecoilState($newFlow);
-  const history = useHistory();
+  const navigate = useNavigate();
 
   useEffect(() => {
     setAllTriggers(data);
@@ -47,7 +47,7 @@ export default function SelectTrigger() {
   };
 
   const removeTrigger = () => {
-    history.push("/");
+    navigate("/");
     // const tempConf = { ...newFlow }
     // delete tempConf.triggered_entity
     // setNewFlow(tempConf)
@@ -65,7 +65,7 @@ export default function SelectTrigger() {
             className="btcd-inte-card flx flx-center flx-wrp mr-4 mt-3"
             tabIndex="0"
           >
-            <img loading="lazy" src={newFlow.triggerDetail.icon_url} alt="" />
+            <img loading="lazy" src={newFlow.triggerDetail?.icon_url} alt="" />
             <div className="txt-center">Elementor</div>
             <button
               onClick={removeTrigger}
@@ -77,7 +77,7 @@ export default function SelectTrigger() {
             </button>
           </div>
           <div className="flx">
-            {newFlow.triggerDetail.type === "form" && flowStep === 1 && (
+            {newFlow.triggerDetail?.type === "form" && flowStep === 1 && (
               <FormPlugin />
             )}
           </div>

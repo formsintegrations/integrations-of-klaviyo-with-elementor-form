@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import { $iklaviyoef, $flowStep, $newFlow } from "../../../GlobalStates";
 import zohoCRM from "../../../resource/img/integ/crm.svg";
@@ -10,9 +10,9 @@ export default function SelectAction() {
   const { isPro } = useRecoilValue($iklaviyoef);
   const [newFlow, setNewFlow] = useRecoilState($newFlow);
   const setFlowStep = useSetRecoilState($flowStep);
-  const history = useHistory();
+  const navigate = useNavigate();
 
-  const integs = [{ type: "Zoho CRM", logo: zohoCRM, pro: isPro }];
+  const integs = [{ type: "Klaviyo", logo: zohoCRM, pro: isPro }];
 
   const updatedStep = () => {
     setFlowStep(1);
@@ -22,7 +22,7 @@ export default function SelectAction() {
     const tempConf = { ...newFlow };
     tempConf.action = action;
     setNewFlow(tempConf);
-    history.push(`action/new/${action}`);
+    navigate(`action/new/${action}`);
   };
 
   return (

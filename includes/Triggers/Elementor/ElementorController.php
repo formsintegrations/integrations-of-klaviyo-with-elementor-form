@@ -41,7 +41,7 @@ final class ElementorController
     public function getAllForms()
     {
         if (!self::pluginActive()) {
-            wp_send_json_error(__('Elementor Pro is not installed or activated', 'bit-integrations'));
+            wp_send_json_error(__('Elementor Pro is not installed or activated', 'elementor-klaviyo'));
         }
 
         $forms = ElementorHelper::all_forms();
@@ -59,15 +59,15 @@ final class ElementorController
     public function getFormFields($data)
     {
         if (!self::pluginActive()) {
-            wp_send_json_error(__('Elementor Pro is not installed or activated', 'bit-integrations'));
+            wp_send_json_error(__('Elementor Pro is not installed or activated', 'elementor-klaviyo'));
         }
 
         if (empty($data->id)) {
-            wp_send_json_error(__('Form doesn\'t exists', 'bit-integrations'));
+            wp_send_json_error(__('Form doesn\'t exists', 'elementor-klaviyo'));
         }
         $fields = self::fields($data);
         if (empty($fields)) {
-            wp_send_json_error(__('Form doesn\'t exists any field', 'bit-integrations'));
+            wp_send_json_error(__('Form doesn\'t exists any field', 'elementor-klaviyo'));
         }
 
         $responseData['fields'] = $fields;
@@ -78,7 +78,7 @@ final class ElementorController
     public static function fields($data)
     {
         if (empty($data->id)) {
-            wp_send_json_error(__('Form doesn\'t exists', 'bit-integrations'));
+            wp_send_json_error(__('Form doesn\'t exists', 'elementor-klaviyo'));
         }
         $form_id = $data->id;
         $post_id = $data->postId;

@@ -1,13 +1,6 @@
 import { lazy, Suspense, useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  NavLink,
-  Link,
-} from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import "./resource/sass/app.scss";
-import { RecoilRoot } from "recoil";
 import { Toaster } from "react-hot-toast";
 import { __ } from "./Utils/i18nwrap";
 import "./resource/icons/style.css";
@@ -45,81 +38,83 @@ function App() {
           },
         }}
       />
-      <Router
-        basename={typeof iklaviyoef !== "undefined" ? iklaviyoef.baseURL : "/"}
-      >
-        <div className="Btcd-App">
-          <div className="nav-wrp">
-            <div className="flx">
-              <div className="logo flx" title={__("Integrations for Forms")}>
-                <Link to="/" className="flx">
-                  <img src={logo} alt="logo" className="ml-2" />
-                  <span className="ml-2">Elementor Zoho CRM</span>
-                </Link>
-              </div>
-              <nav className="top-nav ml-2">
-                <NavLink exact to="/" activeClassName="app-link-active">
-                  {__("Integrations")}
-                </NavLink>
-                <NavLink
-                  exact
-                  to="/app-settings"
-                  activeClassName="app-link-active"
-                >
-                  {__("Settings")}
-                </NavLink>
-              </nav>
 
-              <div className="pro-link">
-                <a
-                  href="https://www.bitapps.pro/zoho-crm-with-elementor"
-                  target="_blank"
-                >
-                  Get Pro
-                </a>
-              </div>
+      <div className="Btcd-App">
+        <div className="nav-wrp">
+          <div className="flx">
+            <div className="logo flx" title={__("Integrations for Forms")}>
+              <Link to="/" className="flx">
+                <img src={logo} alt="logo" className="ml-2" />
+                <span className="ml-2">Elementor Klaviyo</span>
+              </Link>
+            </div>
+            <nav className="top-nav ml-2">
+              <Link exact to="/" activeClassName="app-link-active">
+                {__("Integrations")}
+              </Link>
+              <Link exact to="/app-settings" activeClassName="app-link-active">
+                {__("Settings")}
+              </Link>
+            </nav>
+
+            <div className="pro-link">
+              <a
+                href="hhttps://formsintegrations.com/elementor-forms-integration-with-klaviyo/"
+                target="_blank"
+              >
+                Get Pro
+              </a>
             </div>
           </div>
+        </div>
 
-          <div className="route-wrp">
-            <Switch>
-              <Route exact path="/">
+        <div className="route-wrp">
+          <Routes>
+            <Route
+              exact
+              path="/"
+              element={
                 <Suspense fallback={<TableLoader />}>
                   <AllIntegrations />
                 </Suspense>
-              </Route>
-              <Route path="/app-settings">
+              }
+            />
+            <Route
+              path="/app-settings"
+              element={
                 <Suspense
                   fallback={<Loader className="g-c" style={loaderStyle} />}
                 >
                   <Settings />
                 </Suspense>
-              </Route>
+              }
+            />
 
-              <RecoilRoot>
-                <Route path="/flow/new">
-                  <Suspense
-                    fallback={<Loader className="g-c" style={loaderStyle} />}
-                  >
-                    <FlowBuilder />
-                  </Suspense>
-                </Route>
-                <Route path="/flow/action">
-                  <Suspense
-                    fallback={<Loader className="g-c" style={loaderStyle} />}
-                  >
-                    <Integrations />
-                  </Suspense>
-                </Route>
-              </RecoilRoot>
+            <Route
+              path="/flow/new"
+              element={
+                <Suspense
+                  fallback={<Loader className="g-c" style={loaderStyle} />}
+                >
+                  <FlowBuilder />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/flow/action/*"
+              element={
+                <Suspense
+                  fallback={<Loader className="g-c" style={loaderStyle} />}
+                >
+                  <Integrations />
+                </Suspense>
+              }
+            />
 
-              <Route path="*">
-                <Error404 />
-              </Route>
-            </Switch>
-          </div>
+            <Route path="*" element={<Error404 />} />
+          </Routes>
         </div>
-      </Router>
+      </div>
     </Suspense>
   );
 }

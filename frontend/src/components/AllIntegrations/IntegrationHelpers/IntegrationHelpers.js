@@ -8,7 +8,7 @@ export const saveIntegConfig = async (
   setFlow,
   allIntegURL,
   confTmp,
-  history,
+  navigate,
   index,
   edit,
   setIsLoading
@@ -53,7 +53,7 @@ export const saveIntegConfig = async (
   try {
     const res = await bitsFetch(data, action);
     if (!edit && res.success) {
-      history.push(allIntegURL);
+      navigate(allIntegURL);
     }
 
     setIsLoading(false);
@@ -69,7 +69,7 @@ export const saveActionConf = async ({
   setFlow,
   allIntegURL,
   conf,
-  history,
+  navigate,
   index,
   edit,
   setIsLoading,
@@ -105,7 +105,7 @@ export const saveActionConf = async ({
   try {
     await bitsFetch(data, action).then((res) => {
       if (!edit && res.success) {
-        history.push(allIntegURL);
+        navigate(allIntegURL);
       }
 
       let msg = "";
@@ -127,7 +127,7 @@ export const saveActionConf = async ({
       setIsLoading && setIsLoading instanceof Function && setIsLoading(false);
       if (!edit) {
         setTimeout(() => {
-          history.push(allIntegURL);
+          navigate(allIntegURL);
         }, 700);
       }
     });
@@ -355,11 +355,12 @@ export const handleFieldMapping = (
 
 export const handleCustomValue = (event, index, conftTmp, setConf, tab) => {
   const newConf = { ...conftTmp };
+
   if (tab) {
     newConf.relatedlists[tab - 1].field_map[index].customValue =
       event.target.value;
   } else {
-    newConf.field_map[index].customValue = event.target.value;
+    newConf.field_map[index].customValue = event;
   }
   setConf({ ...newConf });
 };
