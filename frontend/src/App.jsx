@@ -59,7 +59,7 @@ function App() {
 
             <div className="pro-link">
               <a
-                href="hhttps://formsintegrations.com/elementor-forms-integration-with-klaviyo/"
+                href="https://formsintegrations.com/elementor-forms-integration-with-klaviyo/"
                 target="_blank"
               >
                 Get Pro

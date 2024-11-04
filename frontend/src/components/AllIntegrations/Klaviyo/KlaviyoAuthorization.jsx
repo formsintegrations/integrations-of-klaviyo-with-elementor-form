@@ -37,7 +37,7 @@ function KlaviyoAuthorization({
   <h4>${__("Step of get API Key:", "elementor-klaviyo")}</h4>
   <ul>
     <li>${__(
-      "Goto Settings and click on",
+      "Go to Settings and click on",
       "elementor-klaviyo"
     )} <a href="https://www.klaviyo.com/account#api-keys-tab" target='_blank'>${__(
     "API Keys.",

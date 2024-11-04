@@ -34,6 +34,8 @@ function KlaviyoFieldMap({
     setKlaviyoConf(newConf);
   };
 
+  console.log(klaviyoConf);
+
   return (
     <div className="flx mt-2 mb-2 iklaviyoef-field-map">
       <div className="pos-rel flx">
@@ -132,13 +134,16 @@ function KlaviyoFieldMap({
             />
           )}
         </div>
-        <button
-          onClick={() => addFieldMap(i, klaviyoConf, setKlaviyoConf, type)}
-          className="icn-btn sh-sm ml-2 mr-1"
-          type="button"
-        >
-          +
-        </button>
+        {klaviyoConf.field_map.length < 2 && (
+          <button
+            onClick={() => addFieldMap(i, klaviyoConf, setKlaviyoConf, type)}
+            className="icn-btn sh-sm ml-2 mr-1"
+            type="button"
+          >
+            +
+          </button>
+        )}
+
         <button
           onClick={() => delFieldMap(i, klaviyoConf, setKlaviyoConf, type)}
           className="icn-btn sh-sm ml-1"

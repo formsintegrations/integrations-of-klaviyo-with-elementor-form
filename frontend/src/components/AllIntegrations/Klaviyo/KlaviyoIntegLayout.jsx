@@ -106,22 +106,25 @@ function KlaviyoIntegLayout({
               type="field_map"
             />
           ))}
-          <div className="txt-center iklaviyoef-field-map-button mt-2">
-            <button
-              onClick={() =>
-                addFieldMap(
-                  klaviyoConf.field_map.length,
-                  klaviyoConf,
-                  setKlaviyoConf,
-                  "field_map"
-                )
-              }
-              className="icn-btn sh-sm"
-              type="button"
-            >
-              +
-            </button>
-          </div>
+
+          {klaviyoConf.field_map.length < 2 && (
+            <div className="txt-center iklaviyoef-field-map-button mt-2">
+              <button
+                onClick={() =>
+                  addFieldMap(
+                    klaviyoConf.field_map.length,
+                    klaviyoConf,
+                    setKlaviyoConf,
+                    "field_map"
+                  )
+                }
+                className="icn-btn sh-sm"
+                type="button"
+              >
+                +
+              </button>
+            </div>
+          )}
         </div>
       )}
       {klaviyoConf?.listId && (

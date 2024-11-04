@@ -43,7 +43,7 @@ export default function IntegrationStepThree({
 
   const info = `
   <ul>
-      <li>In this version, you can only map two fields of Klaviyo.If you want to map all of the fields of Zoho then the <a href="https://www.bitapps.pro/klaviyo-with-elementor">Pro version</a> is available for you.</li>
+      <li>In this version, you can only map two fields of Klaviyo.If you want to map all of the fields of Zoho then the <a href="https://formsintegrations.com/elementor-forms-integration-with-klaviyo/">Pro version</a> is available for you.</li>
   </ul>`;
   return (
     <div>
