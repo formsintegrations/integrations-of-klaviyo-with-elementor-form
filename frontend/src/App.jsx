@@ -57,14 +57,14 @@ function App() {
               </Link>
             </nav>
 
-            <div className="pro-link">
+            {/* <div className="pro-link">
               <a
                 href="https://formsintegrations.com/elementor-forms-integration-with-klaviyo/"
                 target="_blank"
               >
                 Get Pro
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
 
