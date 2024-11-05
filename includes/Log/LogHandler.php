@@ -66,9 +66,9 @@ final class LogHandler
         $logModel->insert(
             [
                 'flow_id' => $flow_id,
-                'api_type' => is_string($api_type) ? $api_type : json_encode($api_type),
-                'response_type' => is_string($response_type) ? $response_type : json_encode($response_type),
-                'response_obj' => is_string($response_obj) ? $response_obj : json_encode($response_obj),
+                'api_type' => is_string($api_type) ? $api_type : wp_json_encode($api_type),
+                'response_type' => is_string($response_type) ? $response_type : wp_json_encode($response_type),
+                'response_obj' => is_string($response_obj) ? $response_obj : wp_json_encode($response_obj),
                 'created_at' => current_time('mysql')
             ]
         );
@@ -83,7 +83,7 @@ final class LogHandler
         if (is_wp_error($deleteStatus)) {
             wp_send_json_error($deleteStatus->get_error_code());
         }
-        wp_send_json_success(__('Log deleted successfully', 'iklaviyoef'));
+        wp_send_json_success(__('Log deleted successfully', 'integration-of-elementor-and-klaviyo'));
     }
 
     public static function delete($data)

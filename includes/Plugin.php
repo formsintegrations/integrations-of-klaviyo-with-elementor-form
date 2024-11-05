@@ -74,7 +74,7 @@ final class Plugin
      */
     public function plugin_action_links($links)
     {
-        $links[] = '<a href="https://docs.elementor-klaviyo.bitapps.pro" target="_blank">' . __('Docs', 'iklaviyoef') . '</a>';
+        $links[] = '<a href="https://docs.elementor-klaviyo.bitapps.pro" target="_blank">' . __('Docs', 'integration-of-elementor-and-klaviyo') . '</a>';
 
         return $links;
     }

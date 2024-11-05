@@ -77,7 +77,7 @@ final class Route
             wp_send_json_error(
                 __(
                     'Token expired or invalid. Please refresh the page and try again.',
-                    'iklaviyoef'
+                    'integration-of-elementor-and-klaviyo'
                 ),
                 401
             );

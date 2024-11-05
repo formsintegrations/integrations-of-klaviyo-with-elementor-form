@@ -8,7 +8,7 @@
  * Version:     1.0.0
  * Author:      Forms Integrations
  * Author URI:  https://formsintegrations.com
- * Text Domain: iklaviyoef
+ * Text Domain: integration-of-elementor-and-klaviyo
  * Requires PHP: 5.6
  * Domain Path: /languages
  * License: GPLv2 or later
@@ -33,14 +33,14 @@ if (!function_exists('iklaviyoef_activate_plugin')) {
         global $wp_version;
         if (version_compare($wp_version, '5.1', '<')) {
             wp_die(
-                esc_html__('This plugin requires WordPress version 5.1 or higher.', 'iklaviyoef'),
-                esc_html__('Error Activating', 'iklaviyoef')
+                esc_html__('This plugin requires WordPress version 5.1 or higher.', 'integration-of-elementor-and-klaviyo'),
+                esc_html__('Error Activating', 'integration-of-elementor-and-klaviyo')
             );
         }
         if (version_compare(PHP_VERSION, '5.6.0', '<')) {
             wp_die(
-                esc_html__('Forms Integrations requires PHP version 5.6.', 'iklaviyoef'),
-                esc_html__('Error Activating', 'iklaviyoef')
+                esc_html__('Forms Integrations requires PHP version 5.6.', 'integration-of-elementor-and-klaviyo'),
+                esc_html__('Error Activating', 'integration-of-elementor-and-klaviyo')
             );
         }
         do_action('iklaviyoef_activation');

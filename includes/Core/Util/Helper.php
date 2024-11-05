@@ -34,12 +34,6 @@ final class Helper
         return $data;
     }
 
-    public static function dd($data)
-    {
-        echo '<pre>';
-        var_dump($data); // or var_dump($data);
-        echo '</pre>';
-    }
 
     public static function isJson($string)
     {

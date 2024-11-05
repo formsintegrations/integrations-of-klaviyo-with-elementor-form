@@ -22,7 +22,7 @@ class KlaviyoController
             wp_send_json_error(
                 __(
                     'Requested parameter is empty',
-                    'elementor-klaviyo'
+                    'integration-of-elementor-and-klaviyo'
                 ),
                 400
             );
@@ -34,7 +34,7 @@ class KlaviyoController
             wp_send_json_error(
                 __(
                     'Invalid token',
-                    'elementor-klaviyo'
+                    'integration-of-elementor-and-klaviyo'
                 ),
                 400
             );
@@ -45,18 +45,23 @@ class KlaviyoController
 
     public function execute($integrationData, $fieldValues)
     {
+
         $integrationDetails = $integrationData->flow_details;
         $integId = $integrationData->id;
         $authKey = $integrationDetails->authKey;
         $listId = $integrationDetails->listId;
         $field_map = $integrationDetails->field_map;
+        $authKey = '';
 
         if (
             empty($field_map)
             || empty($authKey)
         ) {
-            return new WP_Error('REQ_FIELD_EMPTY', wp_sprintf(__('module, fields are required for %s api', 'elementor-klaviyo'), 'Klaviyo'));
+            // translators: %s refers to the integration action name.
+            return new WP_Error('REQ_FIELD_EMPTY', wp_sprintf(__('list, fields are required for %s api', 'integration-of-elementor-and-klaviyo'), 'Klaviyo'));
         }
+
+
         $recordApiHelper = new RecordApiHelper($integrationDetails, $integId);
         $klaviyoApiResponse = $recordApiHelper->execute(
             $listId,

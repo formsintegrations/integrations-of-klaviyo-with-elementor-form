@@ -1,10 +1,7 @@
-import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import { $iklaviyoef, $flowStep, $newFlow } from "../../../GlobalStates";
-import zohoCRM from "../../../resource/img/integ/crm.svg";
 import { __ } from "../../../Utils/i18nwrap";
-import { sortByField } from "../../../Utils/Helpers";
 
 export default function SelectAction() {
   const { isPro } = useRecoilValue($iklaviyoef);
@@ -12,7 +9,7 @@ export default function SelectAction() {
   const setFlowStep = useSetRecoilState($flowStep);
   const navigate = useNavigate();
 
-  const integs = [{ type: "Klaviyo", logo: zohoCRM, pro: isPro }];
+  const integs = [{ type: "Klaviyo", logo: "", pro: isPro }];
 
   const updatedStep = () => {
     setFlowStep(1);

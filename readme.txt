@@ -1,6 +1,6 @@
 === Integrations of Klaviyo with Elementor form ===
 Contributors: formsintegrations
-Tags: Klaviyo with Elementor,  Elementor with Klaviyo, Klaviyo and Elementor, Elementor and Klaviyo, Klaviyo Integration, Elementor Integration, Klaviyo, Integration
+Tags: Klaviyo with Elementor, Elementor and Klaviyo, Klaviyo Integration, Elementor Integration, Integration
 Requires at least: 5.1
 Tested up to: 6.6
 Requires PHP: 7.4

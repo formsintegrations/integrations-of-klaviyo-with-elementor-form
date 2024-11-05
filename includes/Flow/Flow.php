@@ -110,7 +110,8 @@ final class Flow
             $missing_field = 'Integration ID';
         }
         if (!is_null($missing_field)) {
-            wp_send_json_error(sprintf(__('%s can\'t be empty', 'iklaviyoef'), $missing_field));
+            // translators: %s refers to the integration ID.
+            wp_send_json_error(sprintf(__('%s can\'t be empty', 'integration-of-elementor-and-klaviyo'), $missing_field));
         }
         $integrationHandler = new FlowController();
         $integrations = $integrationHandler->get(
@@ -165,7 +166,8 @@ final class Flow
             $missing_field = (is_null($missing_field) ? null : ', ') . 'Integration details';
         }
         if (!is_null($missing_field)) {
-            wp_send_json_error(sprintf(__('%s can\'t be empty', 'iklaviyoef'), $missing_field));
+            // translators: %s refers to the integration ID.
+            wp_send_json_error(sprintf(__('%s can\'t be empty', 'integration-of-elementor-and-klaviyo'), $missing_field));
         }
         $name = !empty($data->name) ? $data->name : '';
         $integrationHandler = new FlowController();
@@ -173,7 +175,7 @@ final class Flow
         if (is_wp_error($saveStatus)) {
             wp_send_json_error($saveStatus->get_error_message());
         }
-        wp_send_json_success(['id' => $saveStatus, 'msg' => __('Integration saved successfully', 'iklaviyoef')]);
+        wp_send_json_success(['id' => $saveStatus, 'msg' => __('Integration saved successfully', 'integration-of-elementor-and-klaviyo')]);
     }
 
     public function flowClone($data)
@@ -184,7 +186,8 @@ final class Flow
             $missingId = 'Flow ID';
         }
         if (!is_null($missingId)) {
-            wp_send_json_error(sprintf(__('%s can\'t be empty', 'iklaviyoef'), $missingId));
+            // translators: %s refers to the integration ID.
+            wp_send_json_error(sprintf(__('%s can\'t be empty', 'integration-of-elementor-and-klaviyo'), $missingId));
         }
         $integrationHandler = new FlowController();
         $integrations = $integrationHandler->get(
@@ -207,7 +210,7 @@ final class Flow
             }
             wp_send_json_success(['id' => $saveStatus, 'created_at' => $user_details['time']]);
         } else {
-            wp_send_json_error(__('Flow ID is not exists', 'iklaviyoef'));
+            wp_send_json_error(__('Flow ID is not exists', 'integration-of-elementor-and-klaviyo'));
         }
     }
 
@@ -221,7 +224,8 @@ final class Flow
             $missing_field = 'Flow details';
         }
         if (!is_null($missing_field)) {
-            wp_send_json_error(sprintf(__('%s can\'t be empty', 'iklaviyoef'), $missing_field));
+            // translators: %s refers to the integration ID.
+            wp_send_json_error(sprintf(__('%s can\'t be empty', 'integration-of-elementor-and-klaviyo'), $missing_field));
         }
         $name = !empty($data->name) ? $data->name : '';
         $integrationHandler = new FlowController();
@@ -237,7 +241,7 @@ final class Flow
         if (is_wp_error($updateStatus) && $updateStatus->get_error_code() !== 'result_empty') {
             wp_send_json_error($updateStatus->get_error_message());
         }
-        wp_send_json_success(__('Integration updated successfully', 'iklaviyoef'));
+        wp_send_json_success(__('Integration updated successfully', 'integration-of-elementor-and-klaviyo'));
     }
 
     public function delete($data)
@@ -247,20 +251,22 @@ final class Flow
             $missing_field = 'Integration id';
         }
         if (!is_null($missing_field)) {
-            wp_send_json_error(sprintf(__('%s cann\'t be empty', 'iklaviyoef'), $missing_field));
+            // translators: %s refers to the integration ID.
+            wp_send_json_error(sprintf(__('%s cann\'t be empty', 'integration-of-elementor-and-klaviyo'), $missing_field));
         }
         $integrationHandler = new FlowController();
         $deleteStatus = $integrationHandler->delete($data->id);
         if (is_wp_error($deleteStatus)) {
             wp_send_json_error($deleteStatus->get_error_message());
         }
-        wp_send_json_success(__('Integration deleted successfully', 'iklaviyoef'));
+        wp_send_json_success(__('Integration deleted successfully', 'integration-of-elementor-and-klaviyo'));
     }
 
     public function bulkDelete($param)
     {
         if (!is_array($param->flowID) || $param->flowID === []) {
-            wp_send_json_error(sprintf(__('%s cann\'t be empty', 'iklaviyoef'), 'Integration id'));
+            // translators: %s refers to the integration ID.
+            wp_send_json_error(sprintf(__('%s cann\'t be empty', 'integration-of-elementor-and-klaviyo'), 'Integration id'));
         }
 
         $integrationHandler = new FlowController();
@@ -269,7 +275,7 @@ final class Flow
         if (is_wp_error($deleteStatus)) {
             wp_send_json_error($deleteStatus->get_error_message());
         }
-        wp_send_json_success(__('Integration deleted successfully', 'iklaviyoef'));
+        wp_send_json_success(__('Integration deleted successfully', 'integration-of-elementor-and-klaviyo'));
     }
 
     public function toggle_status($data)
@@ -282,14 +288,15 @@ final class Flow
             $missing_field = 'Integration id';
         }
         if (!is_null($missing_field)) {
-            wp_send_json_error(sprintf(__('%s cann\'t be empty', 'iklaviyoef'), $missing_field));
+            // translators: %s refers to the integration ID.
+            wp_send_json_error(sprintf(__('%s cann\'t be empty', 'integration-of-elementor-and-klaviyo'), $missing_field));
         }
         $integrationHandler = new FlowController();
         $toggleStatus = $integrationHandler->updateStatus($data->id, $data->status);
         if (is_wp_error($toggleStatus)) {
             wp_send_json_error($toggleStatus->get_error_message());
         }
-        wp_send_json_success(__('Status changed successfully', 'iklaviyoef'));
+        wp_send_json_success(__('Status changed successfully', 'integration-of-elementor-and-klaviyo'));
     }
 
     /**
@@ -373,7 +380,7 @@ final class Flow
                     // echo "status: " . !Common::checkCondition($flowData->flow_details->condition->logics, $data) . "<br>";
                     // print_r(json_encode($flowData->flow_details->condition->logics));
 
-                    $error = new WP_Error('Conditional Logic False', __('Conditional Logic not matched', 'iklaviyoef'));
+                    $error = new WP_Error('Conditional Logic False', __('Conditional Logic not matched', 'integration-of-elementor-and-klaviyo'));
                     if (isset($flowData->id)) {
                         LogHandler::save($flowData->id, 'Conditional Logic', 'validation', $error);
                     }

@@ -3,7 +3,7 @@
 if (!defined('ABSPATH')) {
     exit;
 }
-$scheme = parse_url(home_url())['scheme'];
+$scheme = wp_parse_url(home_url())['scheme'];
 
 define('IKLAVIYOEF_PLUGIN_BASENAME', plugin_basename(IKLAVIYOEF_PLUGIN_MAIN_FILE));
 define('IKLAVIYOEF_PLUGIN_BASEDIR', plugin_dir_path(IKLAVIYOEF_PLUGIN_MAIN_FILE));
