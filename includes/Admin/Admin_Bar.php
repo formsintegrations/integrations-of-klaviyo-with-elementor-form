@@ -102,6 +102,7 @@ class Admin_Bar
             // $userNames[$value->ID] = ['name' => $value->display_name, 'url' => get_edit_user_link($value->ID)];
         }
 
+
         $iklaviyoef = apply_filters(
             'iklaviyoef_localized_script',
             [
