@@ -110,6 +110,7 @@ final class ElementorController
 
     public static function handle_elementor_submit($record)
     {
+
         global $wpdb;
         $flows = $wpdb->get_results(
             $wpdb->prepare(
@@ -124,6 +125,7 @@ final class ElementorController
                 $record->get_form_settings('id') . $record->get_form_settings('form_post_id')
             )
         );
+
         if (!$flows) {
             return;
         }

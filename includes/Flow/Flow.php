@@ -361,6 +361,7 @@ final class Flow
 
     public static function execute($triggered_entity, $triggered_entity_id, $data, $flows = [])
     {
+
         if (!is_wp_error($flows) && !empty($flows)) {
             $data['bit-integrator%trigger_data%'] = [
                 'triggered_entity' => $triggered_entity,
@@ -388,12 +389,14 @@ final class Flow
                     continue;
                 }
                 $integrationName = is_null($flowData->flow_details->type) ? null : ucfirst(str_replace(' ', '', $flowData->flow_details->type));
+
                 if (!is_null($integrationName) && $integration = static::isActionExists($integrationName)) {
                     $handler = new $integration($flowData->id);
                     if (isset($flowData->flow_details->field_map)) {
                         $sptagData = self::specialTagMappingValue($flowData->flow_details->field_map);
                         $data = $data + $sptagData;
                     }
+
                     $handler->execute($flowData, $data);
                 }
             }

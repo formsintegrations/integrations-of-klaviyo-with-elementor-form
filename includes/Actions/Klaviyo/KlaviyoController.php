@@ -51,7 +51,6 @@ class KlaviyoController
         $authKey = $integrationDetails->authKey;
         $listId = $integrationDetails->listId;
         $field_map = $integrationDetails->field_map;
-        $authKey = '';
 
         if (
             empty($field_map)

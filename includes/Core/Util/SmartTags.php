@@ -22,7 +22,7 @@ final class SmartTags
             // Check if REQUEST_URI is set, then unslash and sanitize
             $postId = isset($_SERVER['REQUEST_URI']) ? url_to_postid(esc_url_raw(wp_unslash($_SERVER['REQUEST_URI']))) : 0;
         }
-        
+
 
         if ($postId) {
             $post = get_post($postId, 'OBJECT');
