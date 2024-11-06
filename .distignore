@@ -10,5 +10,5 @@ port
 pot-to-php.js
 vite.config.js
 .vscode
-.wordpress.org
+.wordpress-org
 locale.pot
