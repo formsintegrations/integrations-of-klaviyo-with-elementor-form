@@ -62,6 +62,7 @@ Visit plugin's [website](https://formsintegrations.com/elementor-forms-integrati
 4. Use the browse button to select the plugin zip file that was downloaded, and then click on Install Now.
 5. Once installed, click “Activate”.
 
+**[Plugin Github Link](https://github.com/formsintegrations/integrations-of-klaviyo-with-elementor-form)
 
 == Changelog ==
 
