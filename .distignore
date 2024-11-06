@@ -11,3 +11,4 @@ pot-to-php.js
 vite.config.js
 .vscode
 .wordpress.org
+locale.pot
