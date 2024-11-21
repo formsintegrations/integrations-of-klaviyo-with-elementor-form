@@ -33,14 +33,16 @@ final class UnInstallation
             $wpdb->prefix . 'iklaviyoef_flow',
             $wpdb->prefix . 'iklaviyoef_log',
         ];
-        foreach ($tableArray as $tablename) {
-            $wpdb->query("DROP TABLE IF EXISTS $tablename");
+
+        foreach ($tableArray as $tableName) {
+            $wpdb->query("DROP TABLE IF EXISTS $tableName");
         }
 
         $columns = $columns + ['iklaviyoef_app_conf'];
 
         foreach ($columns as $column) {
-            $wpdb->query("DELETE FROM `{$wpdb->prefix}options` WHERE option_name='$column'");
+            $query = $wpdb->prepare("DELETE FROM `{$wpdb->prefix}options` WHERE option_name = %s", $column);
+            $wpdb->query($query);
         }
         $wpdb->query("DELETE FROM `{$wpdb->prefix}options` WHERE `option_name` LIKE '%iklaviyoef_webhook_%'");
     }
