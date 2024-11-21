@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Integrations of Klaviyo with Elementor form
  * Requires Plugins: elementor
- * Plugin URI:  https://formsintegrations.com/elementor-forms-integration-with-klaviyo
+ * Plugin URI:  https://formsintegrations.com
  * Description: This plugin integrates Elementor forms with Klaviyo
  * Version:     1.0.0
  * Author:      Forms Integrations

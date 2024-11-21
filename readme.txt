@@ -9,7 +9,7 @@ License: GPLv2 or later
 
 == Description ==
     
-Visit plugin's [website](https://formsintegrations.com/elementor-forms-integration-with-klaviyo)
+Visit plugin's [website](https://formsintegrations.com)
 
 Looking for an easy way to integrate **Elementor Form with Klaviyo**? Look no further than the Integrations of Klaviyo with Elementor Form plugin from WordPress! This plugin simplifies the process of connecting your Klaviyo account and Elementor forms, making it easy to collect and manage your customer data. Optimize your website's functionality with this powerful plugin today!
 
@@ -45,14 +45,14 @@ Here you can see the API response from Klaviyo after Elementor form is submitted
 5. View the detailed log of submitted data from the plugin dashboard.
 6. Advance conditional logic.
 
-**[FEATURES ON PRO VERSION](https://formsintegrations.com/elementor-forms-integration-with-klaviyo):**
+**[FEATURES ON PRO VERSION](https://formsintegrations.com):**
 
 1. You can do multiple/unlimited integrations.
 2. You can map unlimited field of Elementor forms and Klaviyo.
 3. Map with Custom properties are available.
 4. WordPress meta data/smart data fields are available for field mapping with Klaviyo.
 
-Visit plugin's [website](https://formsintegrations.com/elementor-forms-integration-with-klaviyo)
+Visit plugin's [website](https://formsintegrations.com)
 
 == Installation ==
 

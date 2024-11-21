@@ -210,7 +210,7 @@ function AllIntegrations() {
                 <li>You are completing the first integrations.</li>
                 <li>If you want to do <span style='color:blue' > Unlimited Integrations </span> and map all fields of the Klaviyo then you are most welcome to our pro version.</li>
                 <li>We provide all fields mappable to send data Klaviyo and endless number of integrations. We promise this plugin make your life easy.</li>
-                <li>Get <a href="https://formsintegrations.com/elementor-forms-integration-with-klaviyo/">Pro version </a> here.</li>
+                <li>Get <a href="https://formsintegrations.com/">Pro version </a> here.</li>
             </ul>`;
 
   return (
