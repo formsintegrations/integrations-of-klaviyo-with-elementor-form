@@ -44,9 +44,6 @@ final class IpTool
             global $_SERVER;
             if (isset($_SERVER)) {
                 $user_agent = isset($_SERVER['HTTP_USER_AGENT']) ? sanitize_text_field(wp_unslash($_SERVER['HTTP_USER_AGENT'])) : '';
-            } else {
-                global $HTTP_USER_AGENT;
-                $user_agent = $HTTP_USER_AGENT;
             }
         }
         return IpTool::_getBrowserName($user_agent) . '|' . IpTool::_getOS($user_agent);
