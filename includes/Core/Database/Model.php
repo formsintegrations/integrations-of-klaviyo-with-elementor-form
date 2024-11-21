@@ -38,7 +38,7 @@ class Model
     public function insert($data = [])
     {
         if (is_null($data)) {
-            return new WP_Error('empty_data', __('Form data is empty', 'integration-of-elementor-and-klaviyo'));
+            return new WP_Error('empty_data', __('Form data is empty', 'integrations-of-klaviyo-with-elementor-form'));
         }
         $result = $this->app_db->insert(
             $this->table_name,
@@ -137,7 +137,7 @@ class Model
             if ($this->app_db->last_error) {
                 return new WP_Error('db_error', $this->app_db->last_error);
             }
-            return new WP_Error('db_error', __('Result is empty', 'integration-of-elementor-and-klaviyo'));
+            return new WP_Error('db_error', __('Result is empty', 'integrations-of-klaviyo-with-elementor-form'));
         } else {
             return $this->app_db->last_result;
         }
@@ -162,7 +162,7 @@ class Model
         } else {
             return new WP_Error(
                 'update_error',
-                __('Nothing to update', 'integration-of-elementor-and-klaviyo')
+                __('Nothing to update', 'integrations-of-klaviyo-with-elementor-form')
             );
         }
         $update_condition = (!\is_null($condition) &&
@@ -194,7 +194,7 @@ class Model
         } else {
             return new WP_Error(
                 'update_error',
-                __('Nothing to update', 'integration-of-elementor-and-klaviyo')
+                __('Nothing to update', 'integrations-of-klaviyo-with-elementor-form')
             );
         }
 
@@ -246,7 +246,7 @@ class Model
             && array_keys($duplicate) === range(0, count($duplicate) - 1))) {
             return new WP_Error(
                 'duplicate_error',
-                __('Nothing to duplicate', 'integration-of-elementor-and-klaviyo')
+                __('Nothing to duplicate', 'integrations-of-klaviyo-with-elementor-form')
             );
         }
 
@@ -290,7 +290,7 @@ class Model
         } else {
             return new WP_Error(
                 'deletion_error',
-                __('At least 1 condition needed', 'integration-of-elementor-and-klaviyo')
+                __('At least 1 condition needed', 'integrations-of-klaviyo-with-elementor-form')
             );
         }
         $update_condition = (!\is_null($condition) &&
@@ -314,7 +314,7 @@ class Model
         } else {
             return new WP_Error(
                 'deletion_error',
-                __('At least 1 condition needed', 'integration-of-elementor-and-klaviyo')
+                __('At least 1 condition needed', 'integrations-of-klaviyo-with-elementor-form')
             );
         }
         $result = $this->app_db->delete(
@@ -335,7 +335,7 @@ class Model
         } else {
             return new WP_Error(
                 'deletion_error',
-                __('At least 1 condition needed', 'integration-of-elementor-and-klaviyo')
+                __('At least 1 condition needed', 'integrations-of-klaviyo-with-elementor-form')
             );
         }
         $formatted_conditions = $this->getFormatedCondition($delete_condition);
@@ -346,7 +346,7 @@ class Model
             $condition_to_check = null;
             return new WP_Error(
                 'deletion_error',
-                __('At least 1 condition needed', 'integration-of-elementor-and-klaviyo')
+                __('At least 1 condition needed', 'integrations-of-klaviyo-with-elementor-form')
             );
         }
         $result = $this->app_db->query(
@@ -432,7 +432,7 @@ class Model
         }
         // echo " Q S " . $preparedQuery . " Q  EE";
         if (empty($preparedQuery)) {
-            $this->db_response = new WP_Error('null_query', __('prepared query is empty', 'integration-of-elementor-and-klaviyo'));
+            $this->db_response = new WP_Error('null_query', __('prepared query is empty', 'integrations-of-klaviyo-with-elementor-form'));
         } else {
             $this->db_response = stripos($preparedQuery, 'DELETE') !== false ? $this->app_db->query($preparedQuery)
                 : $this->app_db->get_results($preparedQuery, OBJECT_K);
@@ -454,7 +454,7 @@ class Model
             if (is_wp_error($db_response)) {
                 $response = $db_response;
             }
-            $response = new WP_Error('result_empty', __('Result is empty', 'integration-of-elementor-and-klaviyo'));
+            $response = new WP_Error('result_empty', __('Result is empty', 'integrations-of-klaviyo-with-elementor-form'));
         } elseif (is_array($this->app_db->last_result) && !empty($this->app_db->last_result)) {
             $response = $this->app_db->last_result;
         } elseif ($this->app_db->insert_id) {

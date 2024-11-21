@@ -100,7 +100,7 @@ final class Route
         } else {
             // Send error if nonce verification fails
             wp_send_json_error(
-                __('Token expired or invalid. Please refresh the page and try again.', 'integration-of-elementor-and-klaviyo'),
+                __('Token expired or invalid. Please refresh the page and try again.', 'integrations-of-klaviyo-with-elementor-form'),
                 401
             );
         }

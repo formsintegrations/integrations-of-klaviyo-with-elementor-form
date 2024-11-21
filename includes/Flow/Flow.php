@@ -111,7 +111,7 @@ final class Flow
         }
         if (!is_null($missing_field)) {
             // translators: %s refers to the integration ID.
-            wp_send_json_error(sprintf(__('%s can\'t be empty', 'integration-of-elementor-and-klaviyo'), $missing_field));
+            wp_send_json_error(sprintf(__('%s can\'t be empty', 'integrations-of-klaviyo-with-elementor-form'), $missing_field));
         }
         $integrationHandler = new FlowController();
         $integrations = $integrationHandler->get(
@@ -167,7 +167,7 @@ final class Flow
         }
         if (!is_null($missing_field)) {
             // translators: %s refers to the integration ID.
-            wp_send_json_error(sprintf(__('%s can\'t be empty', 'integration-of-elementor-and-klaviyo'), $missing_field));
+            wp_send_json_error(sprintf(__('%s can\'t be empty', 'integrations-of-klaviyo-with-elementor-form'), $missing_field));
         }
         $name = !empty($data->name) ? $data->name : '';
         $integrationHandler = new FlowController();
@@ -175,7 +175,7 @@ final class Flow
         if (is_wp_error($saveStatus)) {
             wp_send_json_error($saveStatus->get_error_message());
         }
-        wp_send_json_success(['id' => $saveStatus, 'msg' => __('Integration saved successfully', 'integration-of-elementor-and-klaviyo')]);
+        wp_send_json_success(['id' => $saveStatus, 'msg' => __('Integration saved successfully', 'integrations-of-klaviyo-with-elementor-form')]);
     }
 
     public function flowClone($data)
@@ -187,7 +187,7 @@ final class Flow
         }
         if (!is_null($missingId)) {
             // translators: %s refers to the integration ID.
-            wp_send_json_error(sprintf(__('%s can\'t be empty', 'integration-of-elementor-and-klaviyo'), $missingId));
+            wp_send_json_error(sprintf(__('%s can\'t be empty', 'integrations-of-klaviyo-with-elementor-form'), $missingId));
         }
         $integrationHandler = new FlowController();
         $integrations = $integrationHandler->get(
@@ -210,7 +210,7 @@ final class Flow
             }
             wp_send_json_success(['id' => $saveStatus, 'created_at' => $user_details['time']]);
         } else {
-            wp_send_json_error(__('Flow ID is not exists', 'integration-of-elementor-and-klaviyo'));
+            wp_send_json_error(__('Flow ID is not exists', 'integrations-of-klaviyo-with-elementor-form'));
         }
     }
 
@@ -225,7 +225,7 @@ final class Flow
         }
         if (!is_null($missing_field)) {
             // translators: %s refers to the integration ID.
-            wp_send_json_error(sprintf(__('%s can\'t be empty', 'integration-of-elementor-and-klaviyo'), $missing_field));
+            wp_send_json_error(sprintf(__('%s can\'t be empty', 'integrations-of-klaviyo-with-elementor-form'), $missing_field));
         }
         $name = !empty($data->name) ? $data->name : '';
         $integrationHandler = new FlowController();
@@ -241,7 +241,7 @@ final class Flow
         if (is_wp_error($updateStatus) && $updateStatus->get_error_code() !== 'result_empty') {
             wp_send_json_error($updateStatus->get_error_message());
         }
-        wp_send_json_success(__('Integration updated successfully', 'integration-of-elementor-and-klaviyo'));
+        wp_send_json_success(__('Integration updated successfully', 'integrations-of-klaviyo-with-elementor-form'));
     }
 
     public function delete($data)
@@ -252,21 +252,21 @@ final class Flow
         }
         if (!is_null($missing_field)) {
             // translators: %s refers to the integration ID.
-            wp_send_json_error(sprintf(__('%s cann\'t be empty', 'integration-of-elementor-and-klaviyo'), $missing_field));
+            wp_send_json_error(sprintf(__('%s cann\'t be empty', 'integrations-of-klaviyo-with-elementor-form'), $missing_field));
         }
         $integrationHandler = new FlowController();
         $deleteStatus = $integrationHandler->delete($data->id);
         if (is_wp_error($deleteStatus)) {
             wp_send_json_error($deleteStatus->get_error_message());
         }
-        wp_send_json_success(__('Integration deleted successfully', 'integration-of-elementor-and-klaviyo'));
+        wp_send_json_success(__('Integration deleted successfully', 'integrations-of-klaviyo-with-elementor-form'));
     }
 
     public function bulkDelete($param)
     {
         if (!is_array($param->flowID) || $param->flowID === []) {
             // translators: %s refers to the integration ID.
-            wp_send_json_error(sprintf(__('%s cann\'t be empty', 'integration-of-elementor-and-klaviyo'), 'Integration id'));
+            wp_send_json_error(sprintf(__('%s cann\'t be empty', 'integrations-of-klaviyo-with-elementor-form'), 'Integration id'));
         }
 
         $integrationHandler = new FlowController();
@@ -275,7 +275,7 @@ final class Flow
         if (is_wp_error($deleteStatus)) {
             wp_send_json_error($deleteStatus->get_error_message());
         }
-        wp_send_json_success(__('Integration deleted successfully', 'integration-of-elementor-and-klaviyo'));
+        wp_send_json_success(__('Integration deleted successfully', 'integrations-of-klaviyo-with-elementor-form'));
     }
 
     public function toggle_status($data)
@@ -289,14 +289,14 @@ final class Flow
         }
         if (!is_null($missing_field)) {
             // translators: %s refers to the integration ID.
-            wp_send_json_error(sprintf(__('%s cann\'t be empty', 'integration-of-elementor-and-klaviyo'), $missing_field));
+            wp_send_json_error(sprintf(__('%s cann\'t be empty', 'integrations-of-klaviyo-with-elementor-form'), $missing_field));
         }
         $integrationHandler = new FlowController();
         $toggleStatus = $integrationHandler->updateStatus($data->id, $data->status);
         if (is_wp_error($toggleStatus)) {
             wp_send_json_error($toggleStatus->get_error_message());
         }
-        wp_send_json_success(__('Status changed successfully', 'integration-of-elementor-and-klaviyo'));
+        wp_send_json_success(__('Status changed successfully', 'integrations-of-klaviyo-with-elementor-form'));
     }
 
     /**
@@ -381,7 +381,7 @@ final class Flow
                     // echo "status: " . !Common::checkCondition($flowData->flow_details->condition->logics, $data) . "<br>";
                     // print_r(json_encode($flowData->flow_details->condition->logics));
 
-                    $error = new WP_Error('Conditional Logic False', __('Conditional Logic not matched', 'integration-of-elementor-and-klaviyo'));
+                    $error = new WP_Error('Conditional Logic False', __('Conditional Logic not matched', 'integrations-of-klaviyo-with-elementor-form'));
                     if (isset($flowData->id)) {
                         LogHandler::save($flowData->id, 'Conditional Logic', 'validation', $error);
                     }
