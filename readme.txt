@@ -62,12 +62,13 @@ Visit plugin's [website](https://formsintegrations.com/elementor-forms-integrati
 4. Use the browse button to select the plugin zip file that was downloaded, and then click on Install Now.
 5. Once installed, click “Activate”.
 
-==About Klaviyo(External Service)==
+== About Klaviyo(External Service) ==
+
 Klaviyo is a powerful email marketing and automation platform designed specifically for e-commerce businesses.
 It enables users to create personalized email campaigns and automated workflows tailored to customer behavior and preferences.
 
 This plugin connects to Klaviyo to retrieve list and field data. After successfully integrating Elementor form with Klaviyo, it sends data to Klaviyo each time the selected Elementor form is submitted.
-This service is provided by "Klaviyo" : [Terms and Privacy](https://www.klaviyo.com/legal).
+Terms and Privacy : https://www.klaviyo.com/legal.
 
 
 **[Plugin Github Link](https://github.com/formsintegrations/integrations-of-klaviyo-with-elementor-form)
