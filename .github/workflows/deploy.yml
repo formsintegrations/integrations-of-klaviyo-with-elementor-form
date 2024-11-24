@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       PLUGIN_SLUG: integrations-of-klaviyo-with-elementor-form
-      DRY_RUN: false
+      DRY_RUN: true
 
     steps:
       - name: Checkout code
