@@ -45,8 +45,8 @@
     "clear-lint-cache": "eslint . --cache --cache-file eslint-cache/eslintcache",
     "clean": "rimraf node_modules yarn.lock package-lock.json",
     "gettext-parser": "npx react-gettext-parser --output ./locale.pot --config ./gettext-parser.config.js  './src/**/{*.js,*.jsx}'",
-    "i18n:json": "npx po2json locale.pot ../languages/iklaviyoef-admin-script.json -f jed1.x",
-    "i18n:php": "[ ! -d \"languages/\" ] && mkdir languages/;node ./pot-to-php.js locale.pot languages/generatedString.php iklaviyoef;wp i18n make-pot ./ --include=*.php --skip-js --slug=iklaviyoef --headers='{\"Last-Translator\":\"support@formsintegrations.com\",\"Language-Team\":\"support@formsintegrations.com\"\"PO-Revision-Date\":\"\",\"Report-Msgid-Bugs-To\":\"\"}'",
+    "i18n:json": "npx po2json locale.pot ../languages/integrations-of-klaviyo-with-elementor-form-admin-script.json -f jed1.x",
+    "i18n:php": "[ ! -d \"languages/\" ] && mkdir languages/;node ./pot-to-php.js locale.pot languages/generatedString.php integrations-of-klaviyo-with-elementor-form;wp i18n make-pot ./ --include=*.php --skip-js --slug=iklaviyoef --headers='{\"Last-Translator\":\"support@formsintegrations.com\",\"Language-Team\":\"support@formsintegrations.com\"\"PO-Revision-Date\":\"\",\"Report-Msgid-Bugs-To\":\"\"}'",
     "production": "composer i --no-dev && pnpm install && pnpm build && pnpm gettext-parser && pnpm i18n:php"
   },
   "husky": {
