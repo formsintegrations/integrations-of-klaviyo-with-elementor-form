@@ -36,8 +36,7 @@ jobs:
           path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-/home/shakhawat/www/forms-integrations/wp-content/plugins/integration-of-zoho-crm-and-forminator/.github
+            ${{ runner.os }}-pnpm-store-integrations-of-klaviyo-with-elementor-form
       - name: Install frontend dependencies
         run: pnpm install
 
@@ -45,7 +44,7 @@ jobs:
         id: setup-php
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '7.x'
+          php-version: "7.x"
           tools: composer:v2, wp-cli
 
       - name: Install php dependencies
