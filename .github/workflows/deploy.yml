@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       PLUGIN_SLUG: integrations-of-klaviyo-with-elementor-form
-      DRY_RUN: true
+      DRY_RUN: false
 
     steps:
       - name: Checkout code
@@ -30,7 +30,7 @@ jobs:
         run: |
           echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
 
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4
         name: Setup pnpm cache
         with:
           path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
