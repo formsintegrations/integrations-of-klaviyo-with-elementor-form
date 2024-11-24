@@ -10,6 +10,7 @@
  * Author URI:  https://formsintegrations.com
  * Text Domain: integrations-of-klaviyo-with-elementor-form
  * Requires PHP: 5.6
+ * Tested up to: 6.7
  * Domain Path: /languages
  * License: GPLv2 or later
  */
