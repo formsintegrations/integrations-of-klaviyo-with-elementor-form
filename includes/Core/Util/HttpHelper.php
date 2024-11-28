@@ -17,10 +17,6 @@ final class HttpHelper
         if (is_wp_error($requestReponse)) {
             return $requestReponse;
         }
-        // $responseCode = wp_remote_retrieve_response_code($requestReponse);
-        // if (!\is_null($responseCode) && $responseCode != 200) {
-        //     return wp_remote_retrieve_response_message($requestReponse);
-        // }
         $responseBody = wp_remote_retrieve_body($requestReponse);
         $jsonData = json_decode($responseBody);
         return \is_null($jsonData) ? $responseBody : $jsonData;
@@ -38,10 +34,6 @@ final class HttpHelper
         if (is_wp_error($requestReponse)) {
             return $requestReponse;
         }
-        // $responseCode = wp_remote_retrieve_response_code($requestReponse);
-        // if (!\is_null($responseCode) && $responseCode != 200) {
-        //     return wp_remote_retrieve_response_message($requestReponse);
-        // }
         $responseBody = wp_remote_retrieve_body($requestReponse);
         $jsonData = json_decode($responseBody);
         return \is_null($jsonData) ? $responseBody : $jsonData;
@@ -60,10 +52,6 @@ final class HttpHelper
         if (is_wp_error($requestReponse)) {
             return $requestReponse;
         }
-        // $responseCode = wp_remote_retrieve_response_code($requestReponse);
-        // if (!\is_null($responseCode) && $responseCode != 200) {
-        //     return wp_remote_retrieve_response_message($requestReponse);
-        // }
         $responseBody = wp_remote_retrieve_body($requestReponse);
         $jsonData = json_decode($responseBody);
         return \is_null($jsonData) ? $responseBody : $jsonData;

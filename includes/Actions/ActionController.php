@@ -2,37 +2,11 @@
 
 namespace FormInteg\IKLAVIYOEF\Actions;
 
-use FilesystemIterator;
 use WP_Error;
 use WP_REST_Request;
 
 final class ActionController
 {
-    /**
-     * Lists available actions
-     *
-     * @return JSON|WP_Error
-     */
-    // public function list()
-    // {
-    //     $actions = [];
-    //     $dirs = new FilesystemIterator(__DIR__);
-    //     foreach ($dirs as $dirInfo) {
-    //         if ($dirInfo->isDir()) {
-    //             $action = basename($dirInfo);
-    //             if (
-    //                 file_exists(__DIR__ . '/' . $action)
-    //                 && file_exists(__DIR__ . '/' . $action . '/' . $action . 'Controller.php')
-    //             ) {
-    //                 $action_controller = __NAMESPACE__ . "\\{$action}\\{$action}Controller";
-    //                 if (method_exists($action_controller, 'info')) {
-    //                     $actions[$action] = $action_controller::info();
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     return $actions;
-    // }
 
     public function handleRedirect(WP_REST_Request $request)
     {
