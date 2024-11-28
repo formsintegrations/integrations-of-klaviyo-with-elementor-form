@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect } from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./resource/sass/app.scss";
 import { Toaster } from "react-hot-toast";
 import { __ } from "./Utils/i18nwrap";
@@ -10,6 +10,7 @@ import Integrations from "./components/Integrations";
 import TableLoader from "./components/Loaders/TableLoader";
 import Settings from "./pages/Settings";
 import FlowBuilder from "./pages/FlowBuilder";
+import { NavLink } from "react-router-dom";
 
 const AllIntegrations = lazy(() => import("./pages/AllIntegrations"));
 const Error404 = lazy(() => import("./pages/Error404"));
@@ -43,28 +44,38 @@ function App() {
         <div className="nav-wrp">
           <div className="flx">
             <div className="logo flx" title={__("Integrations for Forms")}>
-              <Link to="/" className="flx">
+              <NavLink to="/" className="flx">
                 <img src={logo} alt="logo" className="ml-2" />
                 <span className="ml-2">Elementor Klaviyo</span>
-              </Link>
+              </NavLink>
             </div>
             <nav className="top-nav ml-2">
-              <Link exact to="/" activeClassName="app-link-active">
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive ? "app-link-active" : undefined
+                }
+              >
                 {__("Integrations")}
-              </Link>
-              <Link exact to="/app-settings" activeClassName="app-link-active">
+              </NavLink>
+              <NavLink
+                to="/app-settings"
+                className={({ isActive }) =>
+                  isActive ? "app-link-active" : undefined
+                }
+              >
                 {__("Settings")}
-              </Link>
+              </NavLink>
             </nav>
 
-            {/* <div className="pro-link">
+            <div className="pro-link">
               <a
-                href="https://formsintegrations.com/"
+                href="https://formsintegrations.com/elementor-forms-integration-with-klaviyo/"
                 target="_blank"
               >
                 Get Pro
               </a>
-            </div> */}
+            </div>
           </div>
         </div>
 
