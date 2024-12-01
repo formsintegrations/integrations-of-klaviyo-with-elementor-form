@@ -74,7 +74,7 @@ Terms and Privacy : https://www.klaviyo.com/legal.
 
 == Changelog ==
 
-= v1.0.1 (28 Nov, 2024) =
+= v1.0.1 (Dec 1, 2024) =
 * Plugin page url added  
 
 = v1.0.0 =
