@@ -5,12 +5,11 @@
  * Requires Plugins: elementor
  * Plugin URI:  https://formsintegrations.com/elementor-forms-integration-with-klaviyo/
  * Description: This plugin integrates Elementor forms with Klaviyo
- * Version:     1.0.2
+ * Version:     1.0.3
  * Author:      Forms Integrations
  * Author URI:  https://formsintegrations.com
  * Text Domain: integrations-of-klaviyo-with-elementor-form
  * Requires PHP: 5.6
- * Tested up to: 6.7
  * Domain Path: /languages
  * License: GPLv2 or later
  */
